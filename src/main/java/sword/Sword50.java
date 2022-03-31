@@ -7,7 +7,7 @@ import java.util.Set;
  * @author zhourup
  * @date 2022/3/31 15:13
  */
-public class LeetCode50 {
+public class Sword50 {
 
     public static void main(String[] args) {
         String s = "abaccdeff";
