@@ -9,7 +9,7 @@ import java.util.Queue;
  * @author zhourup
  * @date 2022/3/31 11:44
  */
-public class LeetCode32II {
+public class Sword32III {
 
     static private class TreeNode {
         int val;
