@@ -14,6 +14,46 @@ public class LeetCode22 {
     }
 
     /**
+     * 回溯
+     *
+     * @param n
+     * @return
+     */
+    public static List<String> generateParenthesis0(int n) {
+        List<String> res = new ArrayList<>();
+        StringBuilder sb = new StringBuilder();
+        backtrack(res, sb, n, n);
+        return res;
+    }
+
+    /**
+     * @param res
+     * @param sb
+     * @param left  可用的左括号数量
+     * @param right 可用的右括号数量
+     */
+    private static void backtrack(List<String> res, StringBuilder sb, int left, int right) {
+        //剩余左括号大于右括号，表示已形成的字符串右括号比左括号多，则不合法
+        if (left > right) {
+            return;
+        }
+        if (left < 0 || right < 0) {
+            return;
+        }
+        if (left == 0 && right == 0) {
+            res.add(sb.toString());
+            return;
+        }
+        sb.append("(");
+        backtrack(res, sb, left - 1, right);
+        sb.deleteCharAt(sb.length() - 1);
+
+        sb.append(")");
+        backtrack(res, sb, left, right - 1);
+        sb.deleteCharAt(sb.length() - 1);
+    }
+
+    /**
      * 法一：回溯
      *
      * @param n
