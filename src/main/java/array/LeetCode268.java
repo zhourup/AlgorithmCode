@@ -11,6 +11,40 @@ public class LeetCode268 {
     }
 
     /**
+     * 法五、位运算，相同数异或为0：a^a=0   任意数和0异或为其本身:  a^0=a
+     * 将数和索引异或
+     *
+     * @param nums
+     * @return
+     */
+    public static int missingNumber5(int[] nums) {
+        int n = nums.length;
+        int res = 0;
+        for (int i = 0; i < n; i++) {
+            res ^= i ^ nums[i];
+        }
+        res ^= n;
+        return res;
+    }
+
+    /**
+     * 法四、等差数列
+     *
+     * @param nums
+     * @return
+     */
+    public static int missingNumber4(int[] nums) {
+        //等差数列
+        int n = nums.length;
+        long expect = (n * (1 + n)) / 2;
+        long sum = 0;
+        for (int num : nums) {
+            sum += num;
+        }
+        return (int) (expect - sum);
+    }
+
+    /**
      * 方法一
      *
      * @param nums
