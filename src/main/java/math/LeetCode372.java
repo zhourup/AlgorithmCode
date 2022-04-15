@@ -58,6 +58,7 @@ public class LeetCode372 {
         if (k == 0) {
             return 1;
         }
+        a %= base;
         if (k % 2 == 1) {
             return (a * mypow1(a, k - 1)) % base;
         } else {
