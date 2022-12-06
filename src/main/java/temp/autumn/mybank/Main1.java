@@ -1,4 +1,4 @@
-package temp.autumn.webank;
+package temp.autumn.mybank;
 
 import java.util.Scanner;
 
